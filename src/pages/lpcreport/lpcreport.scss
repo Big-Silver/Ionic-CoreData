@@ -1,0 +1,10 @@
+page-lpcreport {
+    ion-content {
+        ion-icon {
+            position: relative;
+            left: calc(100% - 30px);
+            top: -30px;
+            font-size: 20px;
+        }
+    }
+}
