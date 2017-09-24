@@ -5,16 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
     <ion-title>{{title}}</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
     <ion-list class="input-list">
@@ -22,7 +19,7 @@
         <ion-label stacked>Type:</ion-label>
         <ion-input type="text" [(ngModel)]="reference.type" (focus)="focus('showType')" (keyup)="keyup($event, 'showType')"></ion-input>
       </ion-item>
-      <!-- <ion-icon *ngIf="showTypes && reference.type != ''" name="close-circle" (click)="clearInput('showType')" item-end></ion-icon>         -->
+      <ion-icon *ngIf="showTypes && reference.type != ''" name="close-circle" (click)="clearInput('showType')" item-end></ion-icon>        
       <ion-list class="drop-list" *ngIf="showTypes">
         <ion-item *ngFor="let t of types" (click)="setType(t)">
           {{ t }}
