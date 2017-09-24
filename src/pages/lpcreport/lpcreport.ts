@@ -34,8 +34,8 @@ export class LpcreportPage {
     private apiProvider: ApiProvider,
     public loadingCtrl: LoadingController
   ) {
-    this.title = typeof this.navParams.get('title') === 'undefined' ? 'LPC Report' : this.navParams.get('title');
-    this.apiProvider.getReferenceTypes().then((res: any) => {
+      this.title = typeof this.navParams.get('title') === 'undefined' ? 'LPC Report' : this.navParams.get('title');
+      this.apiProvider.getReferenceTypes().then((res: any) => {
       this.origin_types = res;
       this.types = res;
     });

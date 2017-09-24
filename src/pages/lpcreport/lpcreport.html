@@ -16,14 +16,14 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
+<ion-content>
+    <ion-list class="input-list">
       <ion-item>
         <ion-label stacked>Type:</ion-label>
         <ion-input type="text" [(ngModel)]="reference.type" (focus)="focus('showType')" (keyup)="keyup($event, 'showType')"></ion-input>
       </ion-item>
-      <ion-icon *ngIf="showTypes && reference.type != ''" name="close-circle" (click)="clearInput('showType')" item-end></ion-icon>        
-      <ion-list *ngIf="showTypes">
+      <!-- <ion-icon *ngIf="showTypes && reference.type != ''" name="close-circle" (click)="clearInput('showType')" item-end></ion-icon>         -->
+      <ion-list class="drop-list" *ngIf="showTypes">
         <ion-item *ngFor="let t of types" (click)="setType(t)">
           {{ t }}
         </ion-item>
@@ -33,7 +33,7 @@
         <ion-input type="text" [(ngModel)]="reference.borough" (focus)="focus('showBorough')" (keyup)="keyup($event, 'showBorough')"></ion-input>
       </ion-item>
       <ion-icon *ngIf="showBorough && reference.borough != ''" name="close-circle" (click)="clearInput('showBorough')" item-right></ion-icon>
-      <ion-list *ngIf="showBorough">
+      <ion-list class="drop-list" *ngIf="showBorough">
         <ion-item *ngFor="let b of boroughs" (click)="setBorough(b)">
           {{ b }}
         </ion-item>
@@ -43,7 +43,7 @@
         <ion-input type="text" [(ngModel)]="reference.neighborhood" (focus)="focus('showNeighborhood')" (keyup)="keyup($event, 'showNeighborhood')"></ion-input>
       </ion-item>
       <ion-icon *ngIf="showNeighborhood && reference.neighborhood != ''" name="close-circle" (click)="clearInput('showNeighborhood')" item-right></ion-icon>
-      <ion-list *ngIf="showNeighborhood">
+      <ion-list class="drop-list" *ngIf="showNeighborhood">
         <ion-item *ngFor="let n of neighborhoods" (click)="setNeighborhood(n)">
           {{ n }}
         </ion-item>
